@@ -130,8 +130,8 @@ import { BiddingDialogComponent } from '../components/bidding-dialog.component';
 
     /* SENIOR IMAGE UX */
     .hero-visual { position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
-    .image-wrapper { position: relative; width: 120%; display: flex; align-items: center; justify-content: center; transform: translateX(15%); }
-    .main-device { width: 100%; height: auto; z-index: 2; transition: var(--transition); filter: drop-shadow(0 40px 100px rgba(0,0,0,0.8)); }
+    .image-wrapper { position: relative; width: 100%; display: flex; align-items: center; justify-content: center; transform: translateX(0); }
+    .main-device { max-width: 90%; height: auto; z-index: 2; transition: var(--transition); filter: drop-shadow(0 40px 100px rgba(0,0,0,0.8)); }
     .hero-glow { position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(255,107,53,0.1), transparent 70%); z-index: 1; filter: blur(50px); }
     .hero-section:hover .main-device { transform: scale(1.05) rotateY(-5deg); }
 

@@ -63,6 +63,13 @@ header {
   display: flex;
   align-items: center;
   transition: all 0.4s ease;
+  background: white;
+  border-bottom: 1px solid var(--border-light);
+}
+
+header.on-dark {
+  background: transparent;
+  border-bottom: none;
 }
 
 header.scrolled {
@@ -99,6 +106,8 @@ header.on-dark .nav-link.active {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .logo {
@@ -107,6 +116,7 @@ header.on-dark .nav-link.active {
   color: var(--primary);
   text-decoration: none;
   letter-spacing: -1px;
+  margin-right: 2rem;
 }
 
 .logo span {
@@ -129,8 +139,10 @@ header:not(.scrolled) .nav-link.active {
 
 .nav-links {
   display: flex;
-  gap: 3rem;
+  gap: 2.5rem;
   align-items: center;
+  margin-right: auto;
+  margin-left: 2rem;
 }
 
 .nav-link {
