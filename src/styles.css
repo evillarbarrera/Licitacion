@@ -106,8 +106,6 @@ header.on-dark .nav-link.active {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 1280px;
-  margin: 0 auto;
 }
 
 .logo {
@@ -116,7 +114,7 @@ header.on-dark .nav-link.active {
   color: var(--primary);
   text-decoration: none;
   letter-spacing: -1px;
-  margin-right: 2rem;
+  flex-shrink: 0;
 }
 
 .logo span {
