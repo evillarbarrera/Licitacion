@@ -6,7 +6,7 @@ import { ProductService } from '../services/product.service';
 @Component({
   selector: 'app-bidding-dialog',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, CurrencyPipe],
+  imports: [CommonModule, ReactiveFormsModule],
   template: `
     <div class="dialog-overlay" (click)="close.emit()" [class.active]="isVisible()">
       <div class="dialog-container animate-up" (click)="$event.stopPropagation()">
