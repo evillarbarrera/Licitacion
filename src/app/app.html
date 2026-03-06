@@ -1,9 +1,18 @@
 <header [class.scrolled]="isScrolled || !isHome" [class.on-dark]="isHome && !isScrolled">
   <div class="container">
     <div class="nav-wrapper">
-      <a routerLink="/" class="logo">Cyber<span>Total</span></a>
+      <div class="flex items-center">
+        <button class="mobile-toggle" (click)="toggleMenu()">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+        <a routerLink="/" class="logo">Cyber<span>Total</span></a>
+      </div>
 
-      <nav class="nav-links">
+      <nav class="nav-links" [class.open]="isMenuOpen()">
         <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
           class="nav-link">Licitaciones</a>
         <a routerLink="/how-it-works" routerLinkActive="active" class="nav-link">Cómo Funciona</a>
@@ -11,7 +20,7 @@
       </nav>
 
       <div class="nav-actions">
-        <button class="btn btn-primary">Mi Cuenta</button>
+        <button class="btn btn-primary px-6">Mi Cuenta</button>
       </div>
     </div>
   </div>

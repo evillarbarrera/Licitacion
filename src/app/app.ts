@@ -1,4 +1,4 @@
-import { Component, HostListener, inject } from '@angular/core';
+import { Component, HostListener, inject, signal } from '@angular/core';
 import { RouterOutlet, RouterLink, RouterLinkActive, Router, NavigationEnd } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { filter } from 'rxjs';
@@ -13,15 +13,20 @@ export class AppComponent {
   title = 'cybertotal';
   isScrolled = false;
   isHome = true;
+  isMenuOpen = signal(false);
   private router = inject(Router);
 
   constructor() {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: any) => {
-      // Check if we are on the home page route
       this.isHome = event.urlAfterRedirects === '/' || event.urlAfterRedirects === '';
+      this.isMenuOpen.set(false); // Close menu on route change
     });
+  }
+
+  toggleMenu() {
+    this.isMenuOpen.set(!this.isMenuOpen());
   }
 
   @HostListener('window:scroll', [])
